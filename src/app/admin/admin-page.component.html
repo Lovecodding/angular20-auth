@@ -1,0 +1,15 @@
+<div class="page-container">
+  <div class="navbar">
+    <h1>Admin Panel</h1>
+    <div class="nav-actions">
+      <button (click)="onLogout()" class="btn-logout">Logout</button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="info-banner">
+      <p>⚠️ HTTP requests on this page require authentication token</p>
+    </div>
+    <h3>Enrolled Users</h3>
+    <app-users-list />
+  </div>
+</div>

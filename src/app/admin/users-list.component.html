@@ -1,0 +1,15 @@
+@if (updateError()) {
+  <div class="error">ERROR: Failed to update user</div>
+}
+@if (data.hasValue()) {
+<ul class="users-list">
+  @for (user of data.value().users; track user.id) {
+  <li>
+    {{ user.firstName }} {{ user.lastName }}
+    <button mat-stroked-button (click)="unenrollUser(user.id)">
+      Unenroll
+    </button>
+  </li>
+  }
+</ul>
+}

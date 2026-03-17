@@ -1,0 +1,134 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$yellow-palette
+    ),
+    typography: Poppins,
+    theme-type: dark,
+    density: 0,
+  ));
+}
+:root {
+  @include mat.theme-overrides((
+    surface: #0f0f11,
+    on-surface: #faf3e0,
+    primary: #ffc107,
+    secondary: #151519
+  ));
+
+  @include mat.card-overrides((
+    elevated-container-color: var(--mat-sys-surface),
+  ));
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-secondary)
+  ));
+}
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+/* You can add global styles to this file, and also import other style files */
+
+.active {
+  border-color: var(--mat-sys-primary)!important;
+}
+.logo {
+  width: 150px;
+  margin-left: -10px
+}
+app-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+#content {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 16px 16px 0 16px;
+  box-sizing: border-box;
+  background: var(--mat-sys-secondary);
+  width: 100%;
+}
+
+mat-card {
+  margin-bottom: 16px;
+  img {
+    max-width: 340px;
+  }
+  [mat-stroked-button] { width:100% }
+}
+app-courses-list {
+  margin-top: 25px;
+  display: block; 
+  h1 {
+    margin-bottom: 40px;
+  }
+  .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+mat-toolbar {
+  display: flax;
+  justify-content:space-between;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  [mat-stroked-button] {
+    margin-right: 8px;
+  }
+}
+app-admin-page {
+  width: 100vw;
+}
+.users-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  li {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px dotted var(--mat-sys-outline);
+    border-radius: 10px;
+    button {
+      margin-left: 16px;
+    }
+  }
+}
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 1px solid red;
+  border-radius: 4px;
+  background-color: rgba(255, 0, 0, 0.1);
+}
