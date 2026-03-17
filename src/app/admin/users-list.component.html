@@ -4,7 +4,7 @@
 @if (data.hasValue()) {
 <ul class="users-list">
   @for (user of data.value().users; track user.id) {
-  <li>
+  <li class="text">
     {{ user.firstName }} {{ user.lastName }}
     <button mat-stroked-button (click)="unenrollUser(user.id)">
       Unenroll

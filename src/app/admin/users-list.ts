@@ -21,7 +21,7 @@ export class UsersList {
   protected updateError = signal(false);
 
   protected readonly data = httpResource<{ users: User[] }>(() => ({
-    url: `https://dummyjson.com/auth/users?limit=5`
+    url: `https://dummyjson.com/auth/users?limit=7`
   }));
 
   unenrollUser(userId: number) {
